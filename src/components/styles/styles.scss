@@ -1,0 +1,98 @@
+@import "variables";
+
+@import "components";
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
+
+body {
+  background: $bg_color;
+  color: $primary_color;
+  overflow-x: hidden;
+}
+// * {
+//   font-family: "Cinzel";
+// }
+
+.gallery {
+  padding: 0 10vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  .NftCard_Container {
+    margin: 2vw;
+  }
+}
+
+.Bigbutton {
+  color: $primary_color;
+  text-decoration: none;
+  padding: 20px 30px;
+  border: 1px solid $primary_color;
+  position: relative;
+  background: $bg_color;
+  font-size: 1.3em;
+  transition: 0.3s;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0.4em;
+    top: 0.4em;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border: 1px solid $primary_color;
+    transition: 0.3s;
+  }
+  &:hover {
+    //! faire une vrai anim sur le text ( sort par le haut et vient d'en dessous tousa ... )
+    &::after {
+      left: 0.5em;
+      top: 0.5em;
+    }
+  }
+}
+
+.SvgCurveText_Container {
+  width: 100%;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+//! Hero Section
+header {
+  height: 100vh;
+  font-family: "Cinzel";
+  .heroContainer {
+    width: 85%;
+    height: 100%;
+    margin: 0 auto;
+    // padding: 0 15vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .textContainer {
+      h1 {
+        font-size: 7.5em;
+        font-weight: 200;
+        line-height: 100%;
+      }
+    }
+  }
+  .BigCircle {
+    z-index: -1;
+    position: absolute;
+    width: 70vw;
+    top: 0%;
+    right: 0%;
+    transform: translate(30%, -40%);
+  }
+  .LittleCircle {
+    z-index: -1;
+    position: absolute;
+    width: 30vw;
+    top: 0%;
+    left: -10%;
+  }
+}
