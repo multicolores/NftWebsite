@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "gatsby";
 import NftCard from "../components/nftcard";
 import "../components/styles/styles.scss";
@@ -8,8 +8,6 @@ import Navbar from "../components/Navbar";
 
 import { motion, useTransform, useViewportScroll } from "framer-motion";
 
-// import LocomotiveScroll from "locomotive-scroll";
-// import "../../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
 const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
 
 const ImagesTab = [
@@ -35,21 +33,6 @@ const ImagesTab = [
 ];
 
 const IndexPage = () => {
-  //! Locomotive scroll
-  // const ref = useRef(null);
-  // useEffect(() => {
-  //   if (ref) {
-  //     if (typeof window === "undefined" || !window.document) {
-  //       return;
-  //     }
-  //     const scroll = new LocomotiveScroll({
-  //       el: ref.current,
-  //       smooth: true,
-  //       // multiplier: 0.5,
-  //     });
-  //   }
-  // }, []);
-
   //! Roation circle
   const [rotation, setRotation] = useState({
     transform: `translate(30%, -40%) rotate(0deg)`,
@@ -71,11 +54,6 @@ const IndexPage = () => {
   const scale = useTransform(scrollYProgress, [0, 0.5], [50, 200]);
   const scale2 = useTransform(scrollYProgress, [0, 0.5], [-50, -200]);
   return (
-    // <main
-    //   onMouseMove={(e) => setCircleRoationOnMousePos(e)}
-    //   data-scroll-container
-    //   ref={ref}
-    // >
     <main onMouseMove={(e) => setCircleRoationOnMousePos(e)}>
       <title>Home Page</title>
       <Navbar />
@@ -83,9 +61,6 @@ const IndexPage = () => {
         <div className="heroContainer">
           <div className="textContainer">
             <h1>Test NFT collection</h1>
-            {/* <a href="#collection" className="Bigbutton">
-              Collection
-            </a> */}
             <Link to="#collection" className="Bigbutton">
               Collection
             </Link>
