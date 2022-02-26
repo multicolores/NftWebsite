@@ -3,22 +3,33 @@
 @import "components";
 @import "navbar";
 
-
 // @import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat:wght@400;900&display=swap');body {
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat:wght@400;900&display=swap");
+body {
   background: $bg_color;
   color: $primary_color;
   overflow-x: hidden;
 }
+html {
+  scroll-behavior: smooth;
+}
 // * {
 //   font-family: "Cinzel";
 // }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-nav{
+h1,
+h2,
+span {
+  cursor: default;
+}
+a {
+  color: white;
+}
+nav {
   font-family: "Cinzel";
 }
 .gallery {
@@ -88,6 +99,46 @@ header {
         margin-bottom: 5%;
       }
     }
+    .imgContainer {
+      position: relative;
+      width: 50%;
+      height: 100%;
+      .NftCard_Container {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transition: 0.5s;
+        transform: translate(20%, -50%) rotate(20deg);
+        &:nth-child(2) {
+          transform: translate(10%, -50%) rotate(10deg);
+        }
+        &:nth-child(3) {
+          transform: translateY(-50%) rotate(0deg);
+        }
+        // transform: translate(10%, -50%) rotate(10deg);
+        // &:nth-child(2) {
+        //   transform: translate(5%, -50%) rotate(5deg);
+        // }
+        // &:nth-child(3) {
+        //   transform: translateY(-50%) rotate(0deg);
+        // }
+        span {
+          cursor: pointer;
+        }
+      }
+      &:hover {
+        .NftCard_Container {
+          transform: translate(30%, -50%) rotate(30deg);
+          &:nth-child(2) {
+            transform: translate(10%, -50%) rotate(15deg);
+          }
+          &:nth-child(3) {
+            transform: translate(-10%, -50%) rotate(0deg);
+          }
+        }
+      }
+    }
   }
   .BigCircle {
     z-index: -1;
@@ -96,6 +147,7 @@ header {
     top: 0%;
     right: 0%;
     transform: translate(30%, -40%);
+    transition: 0.2s;
   }
   .LittleCircle {
     z-index: -1;
@@ -103,15 +155,15 @@ header {
     width: 30vw;
     top: 0%;
     left: -10%;
+    // transition: 0.2s;
   }
 }
 
-
-.BigTextContainer{
+.BigTextContainer {
   position: relative;
   height: 30vh;
   margin: 10vh 0;
-  .BigTextLign{
+  .BigTextLign {
     top: 0;
     position: absolute;
     border: 2px solid $primary_color;
@@ -121,26 +173,23 @@ header {
     white-space: nowrap;
     left: 50%;
     transform: translateX(-50%) rotate(5deg);
-    &.two{
-      transform: translateX(-50%) rotate(-5deg);
-
+    &.two {
+      transform: translate(-50%, 50%) rotate(-5deg);
     }
   }
 }
 
-
-
-.testText{
+.testText {
   margin: 15vh 10vw;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   width: 60%;
-  h2{
+  h2 {
     font-size: 3em;
     margin: 7vh 0;
     font-weight: 900;
     font-weight: bolder;
   }
-  p{
+  p {
     color: $primary_color_light;
     font-size: 1.2em;
     letter-spacing: 1px;

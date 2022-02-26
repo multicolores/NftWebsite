@@ -16,6 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "framer-motion": "^6.2.8",
     "gatsby": "^4.8.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-image": "^2.8.0",
@@ -24,6 +25,7 @@
     "gatsby-plugin-sharp": "^4.8.0",
     "gatsby-source-filesystem": "^4.8.0",
     "gatsby-transformer-sharp": "^4.8.0",
+    "locomotive-scroll": "^4.1.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
